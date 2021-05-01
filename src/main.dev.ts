@@ -16,6 +16,15 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 
+try {
+  require('electron-reloader')(module, {
+    debug: true,
+    watchRenderer: true,
+  });
+} catch (_) {
+  console.log('Error');
+}
+
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
