@@ -1,3 +1,24 @@
 {
-  "counter": "0004"
+  "counter": "0004",
+  "medici": ["Mario Rossi", "Andrea Verdi"],
+  "resine": {
+    "nomi": ["BBBBB", "AAAAA"],
+    "lotti": ["5", "2AA"]
+  },
+  "leghe": ["AUHISGF", "124NKASFN", "AJSF"],
+  "ceramiche": {
+    "nomi": ["BBBBB", "AAAAA"],
+    "lotti": {
+      "opachi": ["afs", "klòamfs"],
+      "dentina": ["gds", "njklasf"],
+      "incisal": ["asf", "alkgj"],
+      "deepdentin": ["sdxcbvsdx", "aslkògj"],
+      "vari": ["sagvds", "alskhgf"]
+    }
+  },
+  "compositi": {
+    "nomi": ["CCCCCC", "AAAAAA"],
+    "lotti": ["5", "2AA"]
+  },
+  "stecche_denti": ["asfg", "1SADNKASFASGN", "ASD"]
 }

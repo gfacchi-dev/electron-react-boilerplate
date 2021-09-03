@@ -20,6 +20,36 @@
           "endsPattern": "(Compiled successfully|Failed to compile)\\.$"
         }
       }
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "START",
+      "detail": "node -r @babel/register ./.erb/scripts/CheckPortInUse.js && yarn start:renderer"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "BUILD",
+      "detail": "concurrently \"yarn build:main\" \"yarn build:renderer\""
+    },
+    {
+      "type": "npm",
+      "script": "package",
+      "problemMatcher": [],
+      "label": "PUBLISH",
+      "detail": "yarn build && electron-builder build --publish never"
+    },
+    {
+      "type": "npm",
+      "script": "rebuild",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "REBUILD",
+      "detail": "electron-rebuild --parallel --types prod,dev,optional --module-dir src"
     }
   ]
 }

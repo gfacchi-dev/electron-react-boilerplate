@@ -4,9 +4,7 @@ import Container from '../Components/Container';
 const Homepage = () => {
   return (
     <>
-      <Container>
-        <p>Sesso</p>
-      </Container>
+      <Container>Laboratorio Ghinzani</Container>
     </>
   );
 };

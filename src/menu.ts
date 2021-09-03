@@ -197,10 +197,16 @@ export default class MenuBuilder {
   buildDefaultTemplate() {
     const templateDefault = [
       {
+        label: '← &Indietro',
+        click: () => {
+          BrowserWindow.getFocusedWindow().webContents.goBack();
+        },
+      },
+      {
         label: '&Azioni',
         submenu: [
           {
-            label: '&Stampa',
+            label: '🖶 &Stampa',
             accelerator: 'Ctrl+P',
             click: () => {
               BrowserWindow.getFocusedWindow().webContents.print(
@@ -208,15 +214,13 @@ export default class MenuBuilder {
                   silent: false,
                   printBackground: true,
                   color: false,
-                  margin: {
+                  margins: {
                     marginType: 'printableArea',
                   },
                   landscape: false,
                   pagesPerSheet: 1,
                   collate: false,
                   copies: 1,
-                  header: 'Header of the Page',
-                  footer: 'Footer of the Page',
                 },
                 (success, failureReason) => {
                   if (!success) console.log(failureReason);
