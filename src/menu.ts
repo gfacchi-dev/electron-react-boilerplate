@@ -212,10 +212,10 @@ export default class MenuBuilder {
               BrowserWindow.getFocusedWindow().webContents.print(
                 {
                   silent: false,
-                  printBackground: true,
+                  printBackground: false,
                   color: false,
                   margins: {
-                    marginType: 'printableArea',
+                    marginType: 'none',
                   },
                   landscape: false,
                   pagesPerSheet: 1,

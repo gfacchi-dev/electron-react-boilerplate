@@ -1,0 +1,14 @@
+@media print {
+  @page {
+    size: auto; /* auto is the initial value */
+    margin: 5mm; /* this affects the margin in the printer settings */
+  }
+  body {
+    width: 21cm;
+    height: 29.7cm;
+  }
+  html {
+    background-color: #ffffff;
+    margin: 0px; /* this affects the margin on the html before sending to printer */
+  }
+}

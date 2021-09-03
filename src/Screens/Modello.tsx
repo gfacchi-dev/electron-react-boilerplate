@@ -21,6 +21,7 @@ import Container from '../Components/Container';
 const path = 'Config.json';
 
 const Modello = ({ history }) => {
+  const [counter, setCounter] = useState('');
   const [medici, setMedici] = useState([]);
   const [resine, setResine] = useState({ nomi: [], lotti: [] });
   const [leghe, setLeghe] = useState([]);
@@ -62,6 +63,9 @@ const Modello = ({ history }) => {
           console.log(`Error reading file from disk: ${r_err}`);
         } else {
           const json = JSON.parse(data);
+          if (json.counter) {
+            setCounter(json.counter);
+          }
           if (json.medici) {
             setMedici(json.medici);
           }
@@ -102,42 +106,28 @@ const Modello = ({ history }) => {
     readConfig();
   }, []);
 
-  // const incrementGlobalCounter = async () => {
-  //   if (fs.existsSync(path)) {
-  //     fs.readFile(path, 'utf8', (r_err, data) => {
-  //       if (r_err) {
-  //         console.log(`Error reading file from disk: ${r_err}`);
-  //       } else {
-  //         const json = JSON.parse(data);
-  //         const { counter } = json;
-  //         json.counter = (+counter + 1).toLocaleString('it-IT', {
-  //           minimumIntegerDigits: 4,
-  //           useGrouping: false,
-  //         });
-  //         fs.writeFile(path, JSON.stringify(json, null, 4), 'utf8', (w_err) => {
-  //           if (w_err) {
-  //             console.log(`Error writing file: ${w_err}`);
-  //           } else {
-  //             console.log(`File is written successfully!`);
-  //           }
-  //         });
-  //       }
-  //     });
-  //   } else {
-  //     fs.writeFile(
-  //       path,
-  //       JSON.stringify(initConfig, null, 4),
-  //       'utf8',
-  //       (w_err) => {
-  //         if (w_err) {
-  //           console.log(`Error writing file: ${w_err}`);
-  //         } else {
-  //           console.log(`File is written successfully!`);
-  //         }
-  //       }
-  //     );
-  //   }
-  // };
+  const incrementGlobalCounter = async () => {
+    if (fs.existsSync(path)) {
+      fs.readFile(path, 'utf8', (r_err, data) => {
+        if (r_err) {
+          console.log(`Error reading file from disk: ${r_err}`);
+        } else {
+          const json = JSON.parse(data);
+          json.counter = (+json.counter + 1).toLocaleString('it-IT', {
+            minimumIntegerDigits: 4,
+            useGrouping: false,
+          });
+          fs.writeFile(path, JSON.stringify(json, null, 4), 'utf8', (w_err) => {
+            if (w_err) {
+              console.log(`Error writing file: ${w_err}`);
+            } else {
+              console.log(`File is written successfully!`);
+            }
+          });
+        }
+      });
+    }
+  };
 
   return (
     <>
@@ -146,10 +136,10 @@ const Modello = ({ history }) => {
           <Col xs={24} sm={24} md={12}>
             <Formik
               initialValues={{
-                paziente: '',
-                protesi_fissa: '',
-                protesi_mobile: '',
-                protesi_combinata: '',
+                paziente: 'asf',
+                protesi_fissa: 'asf',
+                protesi_mobile: 'asf',
+                protesi_combinata: 'asf',
                 anno_costruzione: null,
                 medico: null,
                 ritiro_lavoro: null,
@@ -161,6 +151,9 @@ const Modello = ({ history }) => {
                 altro: '',
                 altro_valore: '',
                 altro_lotto: '',
+                altro2: '',
+                altro2_valore: '',
+                altro2_lotto: '',
               }}
               // validationSchema={
               //   Yup.object().shape({
@@ -179,9 +172,10 @@ const Modello = ({ history }) => {
               // })}
               onSubmit={(values, { setSubmitting }) => {
                 setSubmitting(true);
+                incrementGlobalCounter();
                 history.push({
                   pathname: '/Stampa',
-                  state: values,
+                  state: { counter, ...values },
                 });
               }}
             >
@@ -736,6 +730,45 @@ const Modello = ({ history }) => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.altro_lotto}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Divider style={{ marginTop: 5 }} />
+                  <Row gutter={15}>
+                    <Col xs={24} sm={24} md={8}>
+                      <Form.Item label="Altro (Titolo)">
+                        <Input
+                          type="text"
+                          name="altro2"
+                          placeholder="Altro (Titolo)"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.altro2}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={24} md={8}>
+                      <Form.Item label="Altro (Valore)">
+                        <Input
+                          type="text"
+                          name="altro2_valore"
+                          placeholder="Altro (Valore)"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.altro2_valore}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={24} md={8}>
+                      <Form.Item label="Altro (Lotto n°)">
+                        <Input
+                          type="text"
+                          name="altro2_lotto"
+                          placeholder="Altro (Lotto n°)"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.altro2_lotto}
                         />
                       </Form.Item>
                     </Col>
