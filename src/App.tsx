@@ -5,6 +5,9 @@ import './App.global.css';
 import Homepage from './Screens/Homepage';
 import Modello from './Screens/Modello';
 import Stampa from './Screens/Stampa';
+import Richiesta from './Screens/Richiesta';
+import StampaRichiesta from './Screens/StampaRichiesta';
+import Storico from './Screens/Storico';
 
 export default function App() {
   return (
@@ -13,6 +16,9 @@ export default function App() {
         <Route path="/" exact component={Homepage} />
         <Route path="/modello" component={Modello} />
         <Route path="/stampa" component={Stampa} />
+        <Route path="/richiesta" component={Richiesta} />
+        <Route path="/stamparichiesta" component={StampaRichiesta} />
+        <Route path="/storico" component={Storico} />
       </Switch>
     </Router>
   );

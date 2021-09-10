@@ -4,7 +4,6 @@ import React from 'react';
 import '../Styles/Stampa.css';
 
 const Stampa = ({ history }) => {
-  // console.log(history.location.state);
   if (!history.location.state) {
     history.push('/Modello');
     return null;
@@ -46,15 +45,16 @@ const Stampa = ({ history }) => {
           </Row>
           <Row justify="center">Iscr. Reg. Min. San. 01018926</Row>
         </Col>
-        <Row justify="center" style={{ marginTop: 20 }}>
-          <Typography.Title level={5}>
-            DICHIARA CHE IL DISPOSITIVO ODONTOIATRICO
-          </Typography.Title>
+        <Row justify="center" style={{ marginTop: 20, fontSize: 13 }}>
+          DICHIARA CHE IL DISPOSITIVO ODONTOIATRICO
         </Row>
-        <Row justify="center">
-          <Typography.Title level={5} style={{ fontWeight: 'bold' }}>
-            N° {`${history.location.state.counter}/${moment().year()}`}
-          </Typography.Title>
+        <Row justify="center" style={{ marginTop: 5, fontSize: 13 }}>
+          <b>
+            N°{' '}
+            {`${history.location.state.counter}/${moment(
+              history.location.state.anno_costruzione
+            ).year()}`}
+          </b>
         </Row>
         <Row justify="center" style={{ marginTop: 10 }}>
           <Col span={18} style={{ textAlign: 'center' }}>
@@ -136,7 +136,7 @@ const Stampa = ({ history }) => {
           {history.location.state.medico}
         </Row>
         <Row justify="center" style={{ marginTop: 10, fontSize: 12 }}>
-          <strong>Realizzato per:</strong>
+          <strong>Realizzato per il paziente:</strong>
         </Row>
         <Row justify="center" style={{ marginTop: 5 }}>
           {history.location.state.paziente}
@@ -157,7 +157,7 @@ const Stampa = ({ history }) => {
           Claudio è un dispositivo medico su misura, destinato ad essere
           utilizzato esclusivamente dal paziente summenzionato ed è conforme
           alle disposizioni legislative che traspongono la direttiva riguardante
-          i dispositivi medici su misura (REGOLAMENTO UE 2017/745).
+          i dispositivi medici su misura (MDR 2017/745).
         </Row>
         <Row
           justify="center"
@@ -193,52 +193,60 @@ const Stampa = ({ history }) => {
           >
             <thead>
               <tr>
-                <th
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    borderCollapse: 'collapse',
-                  }}
-                  scope="col"
-                >
-                  DATA RITIRO LAVORO
-                </th>
-                <th
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    borderCollapse: 'collapse',
-                  }}
-                  scope="col"
-                >
-                  DATA CONSEGNA LAVORO
-                </th>
+                {history.location.state.ritiro_lavoro && (
+                  <th
+                    style={{
+                      padding: '10px',
+                      border: '1px solid black',
+                      borderCollapse: 'collapse',
+                    }}
+                    scope="col"
+                  >
+                    DATA RITIRO LAVORO
+                  </th>
+                )}
+                {history.location.state.consegna_lavoro && (
+                  <th
+                    style={{
+                      padding: '10px',
+                      border: '1px solid black',
+                      borderCollapse: 'collapse',
+                    }}
+                    scope="col"
+                  >
+                    DATA CONSEGNA LAVORO
+                  </th>
+                )}
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    borderCollapse: 'collapse',
-                  }}
-                >
-                  {moment(history.location.state.ritiro_lavoro).format(
-                    'DD/MM/YYYY'
-                  )}
-                </td>
-                <td
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    borderCollapse: 'collapse',
-                  }}
-                >
-                  {moment(history.location.state.consegna_lavoro).format(
-                    'DD/MM/YYYY'
-                  )}
-                </td>
+                {history.location.state.ritiro_lavoro && (
+                  <td
+                    style={{
+                      padding: '10px',
+                      border: '1px solid black',
+                      borderCollapse: 'collapse',
+                    }}
+                  >
+                    {moment(history.location.state.ritiro_lavoro).format(
+                      'DD/MM/YYYY'
+                    )}
+                  </td>
+                )}
+                {history.location.state.consegna_lavoro && (
+                  <td
+                    style={{
+                      padding: '10px',
+                      border: '1px solid black',
+                      borderCollapse: 'collapse',
+                    }}
+                  >
+                    {moment(history.location.state.consegna_lavoro).format(
+                      'DD/MM/YYYY'
+                    )}
+                  </td>
+                )}
               </tr>
             </tbody>
           </table>

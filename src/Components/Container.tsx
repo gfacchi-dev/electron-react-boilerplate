@@ -7,6 +7,8 @@ const getSelectedKey = (location) => {
   const dict = {
     '/': '1',
     '/modello': '2',
+    '/richiesta': '3',
+    '/storico': '4',
   };
   return dict[path];
 };
@@ -32,6 +34,12 @@ const Container = ({ children, history, location }) => {
             </Menu.Item>
             <Menu.Item key="2" route="/modello">
               Modello di Conformità
+            </Menu.Item>
+            <Menu.Item key="3" route="/richiesta">
+              Richiesta
+            </Menu.Item>
+            <Menu.Item key="4" route="/storico">
+              Storico
             </Menu.Item>
           </Menu>
         </Col>

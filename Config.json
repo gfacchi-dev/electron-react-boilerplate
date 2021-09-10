@@ -1,24 +1,147 @@
 {
-  "counter": "0091",
-  "medici": ["Mario Rossi", "Andrea Verdi"],
+  "counter": "0017",
+  "medici": [
+    "DR. Sironi Matteo (Dental & C.)",
+    "Factory Lab di Cantoni Yuri",
+    "DR. Rampinelli Giulio Nicola (Celsus)",
+    "DR. Mariani Umberto (Dental & C.)"
+  ],
   "resine": {
-    "nomi": ["BBBBB", "AAAAA"],
-    "lotti": ["5", "2AA"]
+    "nomi": [
+      "Techim Don",
+      "Techim Press",
+      "Techim Asako",
+      "Techim NXR",
+      "Ivoclar Ivocron",
+      "Techim Project"
+    ],
+    "lotti": [
+      "Techim Don",
+      "P 28790 L 31969",
+      "---",
+      "Techim Press",
+      "P 17053 L 03175",
+      "---",
+      "Techim Asako",
+      "2303",
+      "---",
+      "Techim NXR",
+      "2124",
+      "---",
+      "Ivoclar Ivocron",
+      "410 - P YB029Y/S53121 L YZ1073",
+      "130 - P WT0276/S53121 L YZ1073",
+      "530 - P YB028P/S53121 L YZ1073",
+      "---",
+      "Techim Project",
+      "D3 - P 38019 L 19926",
+      "A3 - P 04294 L 19926"
+    ]
   },
-  "leghe": ["AUHISGF", "124NKASFN", "AJSF"],
+  "leghe": [
+    "Cromo Cobalto Dental Crom",
+    "Cromo Cobalto Biotech",
+    "Cromo Cobalto Yndetech"
+  ],
+  "zirconie": {
+    "nomi": ["ZIR 1", "ZIR 2"],
+    "lotti": ["<Z1>", "Z 1 1 1", "---", "<<2>>", "Z2", "---"]
+  },
   "ceramiche": {
-    "nomi": ["BBBBB", "AAAAA"],
+    "nomi": ["Ivoclar IPS Style", "Ivoclar IPS e.max Ceram"],
     "lotti": {
-      "opachi": ["afs", "klòamfs"],
-      "dentina": ["gds", "njklasf"],
-      "incisal": ["asf", "alkgj"],
-      "deepdentin": ["sdxcbvsdx", "aslkògj"],
-      "vari": ["sagvds", "alskhgf"]
+      "opachi": [
+        "A1 X10276",
+        "A2 U39201",
+        "A3 U38182",
+        "A3.5 W85848",
+        "A4 X43399",
+        "---",
+        "B3 X27788",
+        "---",
+        "C2 X45357",
+        "C3 Y21920",
+        "C4 Y23328",
+        "---",
+        "D2 W42754",
+        "D3 W97236",
+        "D4 X20981",
+        "---",
+        "PINK W86566"
+      ],
+      "dentina": [
+        "A1 W91131",
+        "A2 UZ1075",
+        "A3 Z002HG",
+        "A3.5 Z002BD",
+        "A4 X51666",
+        "---",
+        "B3 Z00156",
+        "---",
+        "C2 X36203",
+        "C3 V18484",
+        "C4 Y12806",
+        "---",
+        "D2 Y01554",
+        "D3 Z003GV",
+        "D4 W40838",
+        "---",
+        "G3 W88571",
+        "G4 W98253"
+      ],
+      "incisal": [
+        "I1 X14520",
+        "I2 V49387",
+        "I3 Z001PS",
+        "I4 Y52042",
+        "I5 W30287"
+      ],
+      "deepdentin": [
+        "A1 W15039",
+        "A2 U15320",
+        "A3 W37020",
+        "A3.5 W90233",
+        "---",
+        "C2 W29339",
+        "C3 W29289",
+        "---",
+        "D2 W34952",
+        "D3 W33983"
+      ],
+      "vari": [
+        "YELLOW W32405",
+        "KHAKI  W43575",
+        "ORANGE W36544",
+        "ORANGE-PINK Y46966",
+        "---",
+        "ONE 2 X09984",
+        "ONE 3 Y02982",
+        "ONE 5 W38089",
+        "---",
+        "OE 1 V10594",
+        "OE 2 X26645",
+        "MAMELON Y-O W10496",
+        "MAMELON L V11882",
+        "OD O V10308",
+        "TRANSPA N X10690"
+      ]
     }
   },
   "compositi": {
-    "nomi": ["CCCCCC", "AAAAAA"],
-    "lotti": ["5", "2AA"]
+    "nomi": ["Solidex"],
+    "lotti": [
+      "D3 - P 081670 O 071619  D 081644 S58 091682",
+      "A3 - P 081670 O 021938  D 061625 S58 091682",
+      "C3 - P 081670 O 0121607 D 081652 S59 101866"
+    ]
   },
-  "stecche_denti": ["asfg", "1SADNKASFASGN", "ASD"]
+  "stecche_denti": [
+    "Ivoclar Vivodent/Orthotyp",
+    "Ivoclar Vivodent",
+    "Ivoclar Orthotyp",
+    "Ivoclar Ivostar/Gnatostar",
+    "Ivoclar Ivostar",
+    "Ivoclar Gnatostar",
+    "Acry Plus"
+  ]
 }

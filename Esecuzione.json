@@ -1,0 +1,23 @@
+{
+  "laboratori": [
+    {
+      "Nome": "PROGETTO LAB-3",
+      "Indirizzo": "Via Risorgimento, 46",
+      "Indirizzo2": "Bernareggio (MB)"
+    },
+    {
+      "Nome": "Dental House",
+      "Indirizzo": "Via Rizzo, 1/B",
+      "Indirizzo2": "Stezzano (BG)"
+    },
+    {
+      "Nome": "Biotech S.r.l",
+      "Indirizzo": "Via Torquato Taramelli, 13",
+      "Indirizzo2": "Legnano (MI)"
+    }
+  ],
+  "modalita": [
+    "Inviate con file",
+    "Con modelli in gesso e cera di masticazione"
+  ]
+}
