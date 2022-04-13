@@ -39,5 +39,3 @@
  * Copyright (c) 2015-present, Jon Schlinkert.
  * Released under the MIT License.
  */
-
-/*! http://mths.be/fromcodepoint v0.1.0 by @mathias */

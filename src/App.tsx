@@ -8,6 +8,8 @@ import Stampa from './Screens/Stampa';
 import Richiesta from './Screens/Richiesta';
 import StampaRichiesta from './Screens/StampaRichiesta';
 import Storico from './Screens/Storico';
+import ModelloSemilavorati from './Screens/ModelloSemilavorati';
+import StampaSemilavorati from './Screens/StampaSemilavorati';
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         <Route path="/richiesta" component={Richiesta} />
         <Route path="/stamparichiesta" component={StampaRichiesta} />
         <Route path="/storico" component={Storico} />
+        <Route path="/semilavorati" component={ModelloSemilavorati} />
+        <Route path="/stampasemilavorati" component={StampaSemilavorati} />
       </Switch>
     </Router>
   );

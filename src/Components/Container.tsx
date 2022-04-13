@@ -9,6 +9,7 @@ const getSelectedKey = (location) => {
     '/modello': '2',
     '/richiesta': '3',
     '/storico': '4',
+    '/semilavorati': '5',
   };
   return dict[path];
 };
@@ -40,6 +41,9 @@ const Container = ({ children, history, location }) => {
             </Menu.Item>
             <Menu.Item key="4" route="/storico">
               Storico
+            </Menu.Item>
+            <Menu.Item key="5" route="/semilavorati">
+              Semilavorati
             </Menu.Item>
           </Menu>
         </Col>
