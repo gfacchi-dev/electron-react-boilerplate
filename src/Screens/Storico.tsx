@@ -14,7 +14,7 @@ const Storico = () => {
   const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
-  const [searchInput, setSearchInput] = useState(null);
+  // const [searchInput, setSearchInput] = useState(null);
   const [records, setRecords] = useState([]);
 
   const readConfig = async () => {
@@ -47,9 +47,11 @@ const Storico = () => {
   }, []);
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
-    confirm();
-    setSearchText(selectedKeys[0]);
-    setSearchedColumn(dataIndex);
+    if (selectedKeys) {
+      confirm();
+      setSearchText(selectedKeys[0]);
+      setSearchedColumn(dataIndex);
+    }
   };
 
   const handleReset = (clearFilters) => {
@@ -66,9 +68,9 @@ const Storico = () => {
     }) => (
       <div style={{ padding: 8 }}>
         <Input
-          ref={(node) => {
-            setSearchInput(node);
-          }}
+          // ref={(node) => {
+          //   setSearchInput(node);
+          // }}
           placeholder={`Cerca ${dataIndex}`}
           value={selectedKeys[0]}
           onChange={(e) =>
@@ -118,11 +120,11 @@ const Storico = () => {
             .toLowerCase()
             .includes(value.toLowerCase())
         : '',
-    onFilterDropdownVisibleChange: (visible) => {
-      if (visible) {
-        setTimeout(() => (searchInput ? searchInput.select() : null), 100);
-      }
-    },
+    // onFilterDropdownVisibleChange: (visible) => {
+    //   if (visible) {
+    //     setTimeout(() => (searchInput ? searchInput.select() : null), 100);
+    //   }
+    // },
   });
 
   return loading ? (
